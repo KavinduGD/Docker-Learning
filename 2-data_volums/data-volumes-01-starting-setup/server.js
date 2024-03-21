@@ -23,6 +23,7 @@ app.get("/exists", (req, res) => {
 });
 
 app.post("/create", async (req, res) => {
+  console.log("feedback added 1");
   const title = req.body.title;
   const content = req.body.text;
 
@@ -43,4 +44,6 @@ app.post("/create", async (req, res) => {
   });
 });
 
-app.listen(80);
+app.listen(process.env.PORT, () => {
+  console.log(`listen on ${process.env.PORT}`);
+});
